@@ -2,8 +2,8 @@ var LocalStrategy = require('passport-local').Strategy;
 var passport = require('passport');
 var express = require('express');
 var socket = require('./socket');
+var auth = require('./auth');
 var nano = require('nano');
-var auth = require('auth');
 var app = express();
 
 passport.use(new LocalStrategy({
