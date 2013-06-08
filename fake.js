@@ -17,7 +17,7 @@ var saveVideos = function(){
 	});
 }
 
-var tweleve_hour = 1000*60*60*12;
+var tweleve_days = 1000*60*60*24*12;
 
 var notSoRandom = function(lessThanThis, rangeLeft){
 	var max = (lessThanThis/rangeLeft)* 2;
@@ -43,11 +43,15 @@ var fakeTheData = function(video){
 	video.views[""+video.createdTime] = 0;
 
 	var timeSpan = now-video.createdTime;
-	var numViews = Math.floor((timeSpan/tweleve_hour)-2);
-	console.log("VIEWS", numViews);
+	var numViews = Math.floor((timeSpan/tweleve_days)-2);
+
+	numViews = numViews < 10 ? 10 : numViews;
+	numViews = numViews > 50 ? 50 : numViews;
+
+	console.log(video.url, "VIEWS", numViews);
 
 	while(numViews--){
-		var time = video.createdTime + (numViews*tweleve_hour);
+		var time = video.createdTime + (numViews*tweleve_days);
 		lastViews = notSoRandom(lastViews,numViews); 
 		video.views[""+time] = lastViews;
 	}

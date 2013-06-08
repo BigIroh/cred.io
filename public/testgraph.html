@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var dataTable = new google.visualization.DataTable();
+	      dataTable.addColumn('date', 'time');
+	      dataTable.addColumn('number', 'views');
+	      dataTable.addRows([
+					[new Date(1370926800000),2768516],
+					[new Date(1369890000000),2484534],
+					[new Date(1368853200000),2110027],
+					[new Date(1367816400000),1834681],
+					[new Date(1366779600000),1368597],
+					[new Date(1365742800000),1048996],
+					[new Date(1364706000000),817452],
+					[new Date(1363669200000),277285],
+					[new Date(1362632400000),3775]
+	      ]);
+
+      	var dataView = new google.visualization.DataView(dataTable);
+
+        var options = {
+          title: 'Company Performance'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(dataView, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
