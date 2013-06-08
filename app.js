@@ -2,7 +2,6 @@ var LocalStrategy = require('passport-local').Strategy;
 var passport = require('passport');
 var express = require('express');
 var socket = require('./socket');
-var jade = require('jade');
 var nano = require('nano');
 var auth = require('auth');
 var app = express();
@@ -20,7 +19,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.set('views', 'views');
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 app.post('/login', passport.authenticate('local', {
     successRedirect: '/',

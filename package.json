@@ -7,14 +7,14 @@
   "dependencies": {
     "component": "~0.16.2",
     "express": "~3.2.5",
-    "jade": "~0.31.1",
     "nano": "~3.3.8",
     "passport": "~0.1.17",
     "passport-local": "~0.1.6",
     "request": "~2.21.0",
     "socket.io": "~0.9.14",
     "when": "~2.1.0",
-    "cheerio": "0.11.0"
+    "cheerio": "0.11.0",
+    "ejs": "~0.8.4"
   },
   "repository": {
     "type": "git",
