@@ -12,11 +12,12 @@ var app = express();
 /* ================================================================================== ***/
 
 passport.serializeUser(function(user, done) {
-  done(null, user.id);
+ 	done(null, user.id);
 });
 
 passport.deserializeUser(function(obj, done) {
-  database.get(obj, done)
+	console.log(obj)
+ 	database.get(obj, done)
 });
 
 passport.use(new TwitterStrategy({
