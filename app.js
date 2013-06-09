@@ -52,6 +52,7 @@ app.get('/auth/twitter/callback', passport.authenticate('twitter', {
 
 //routes
 require("./routes/index")(app);
+require("./routes/credlet")(app);
 require("./routes/content")(app);
 require("./routes/user")(app);
 
