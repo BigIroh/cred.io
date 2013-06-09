@@ -1,6 +1,6 @@
 var TwitterStrategy = require('passport-twitter').Strategy;
+var database = require('./database');
 var passport = require('passport');
-var database = require('database');
 var express = require('express');
 var socket = require('./socket');
 var auth = require('./auth');
