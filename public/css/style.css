@@ -86,7 +86,7 @@ body {
 	width: 30px;
 	border-radius: 15px;
 	border: 1px #00ADEF solid;
-	padding-right: 5px;
+	margin-right: 5px;
 }
 
 .dropdown-toggle > div{
@@ -98,6 +98,12 @@ body {
 	height: 50px;
 	text-align: center;
 	line-height: 50px;
+}
+
+.name {
+	max-height: 20px;
+	max-width: 112px;
+	overflow: hidden;
 }
 
 .barItem {
