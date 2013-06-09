@@ -39,8 +39,10 @@ app.post('/login', passport.authenticate('local', {
 }));
 
 //routes
+require("./routes/index")(app);
 require("./routes/content")(app);
 require("./routes/user")(app);
+
 
 /*** ================================================================================== */
 /** ======================== INIT SOCKET.IO AND START SERVER ========================= **/
