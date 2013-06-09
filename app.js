@@ -13,7 +13,7 @@ var app = express();
 passport.use(new TwitterStrategy({
 	consumerKey: 'y85InTne2xLb17NKOtrdng',
 	consumerSecret: '3b7ZTAh5LtES0Dl2t7XclogOIQGbd5WcRcLbbiy1s',
-	callbackURL: "http://cred.io/auth/twitter/callback"
+	callbackURL: 'http://cred.io/auth/twitter/callback'
 }, auth));
 
 /*** ================================================================================== */
