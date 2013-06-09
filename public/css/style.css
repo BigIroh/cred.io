@@ -107,8 +107,8 @@ body {
 	width: 150px;
 }
 
-.profile img,
-.profile div {
+.userImage,
+.notImg {
 	float: left;
 }
 
