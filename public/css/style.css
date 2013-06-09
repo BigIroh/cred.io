@@ -103,7 +103,12 @@ body {
 	line-height: 50px;
 }
 
-.brand {
+.barItem,
+.dropdown {
+	border-left: 1px #777 solid;
+}
+
+.navbar .brand {
 	text-align: center;
 	width: 50px;
 	border-right: 1px #777 solid;
