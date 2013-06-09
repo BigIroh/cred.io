@@ -1,6 +1,5 @@
 var nano = require('nano')(process.env.CLOUDANT_URL);
 var db = nano.use('credio', function(err) {
-	console.log('exists?', !err);
 	if(err) {
 		nano.db.create('credio');
 		db = nano.use('credio');
@@ -45,14 +44,11 @@ module.exports.byUrl = function(url, callback) {
 
 module.exports.insertUser = function(user, callback) {
 	user.json = user._json;
-	user.id_str = user.json.id_str;
 	delete user._json;
 	delete user._raw;
 
-	db.insert(user, user.id_str, function(err, body) {
-		console.log('body', body)
+	db.insert(user, user.json.id_str, function(err, body) {
 		if(err) {
-			console.log(err);
 			callback(err);
 			return;
 		}
