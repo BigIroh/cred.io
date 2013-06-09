@@ -85,3 +85,8 @@ body {
 	width: 100%;
 	height: 10px;
 }
+
+.userImage {
+	width: 30px;
+	border-radius: 15px;
+}
