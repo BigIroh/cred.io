@@ -107,6 +107,11 @@ body {
 	width: 150px;
 }
 
+.profile img,
+.profile div {
+	float: left;
+}
+
 .navbar .brand {
 	text-align: center;
 	width: 50px;
