@@ -1,7 +1,17 @@
 module.exports = function(app){
 
 	app.get("/:contentid", function(req, res){
-		res.send("STANDARD "+req.params.contentid);
+		var opt = {
+      locals: {page_id:"page-video"},
+      blocks: {
+        content:{
+          filename:"views/video.ejs",
+          locals: {}
+        }
+      }
+    }
+
+    res.render('layouts/single', opt);
 	});	
 
 	app.get("/:contentid/views", function(req, res){
