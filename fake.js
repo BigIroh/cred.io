@@ -25,6 +25,17 @@ var notSoRandom = function(lessThanThis, rangeLeft){
 	return lessThanThis-Math.floor(num);
 }
 
+var makeTheValues = function(viewData){
+
+	var last_value = 0;
+	var views_per_day = {
+		alltime: 0,
+		lastTenDays: 0,
+		lastDay: 0
+	}
+
+}
+
 var fakeTheData = function(video){
 
 	var now = 0;
@@ -48,13 +59,13 @@ var fakeTheData = function(video){
 	numViews = numViews < 10 ? 10 : numViews;
 	numViews = numViews > 50 ? 50 : numViews;
 
-	console.log(video.url, "VIEWS", numViews);
-
 	while(numViews--){
 		var time = video.createdTime + (numViews*tweleve_days);
 		lastViews = notSoRandom(lastViews,numViews); 
 		video.views[""+time] = lastViews;
 	}
+
+	video.values = makeTheValues(video.views);
 
 	return video;
 }
@@ -64,8 +75,9 @@ var videos = openVideos();
 var i = videos.length;
 
 while(i--){
-	videos[i] = fakeTheData(videos[i]);
+	//videos[i] = fakeTheData(videos[i]);
+	makeTheValues([videos[i].views]);
 }
 
-saveVideos();
+//saveVideos();
 

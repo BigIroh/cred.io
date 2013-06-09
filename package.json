@@ -14,7 +14,7 @@
     "socket.io": "~0.9.14",
     "when": "~2.1.0",
     "cheerio": "0.11.0",
-    "ejs": "~0.8.4"
+    "ejs": "https://github.com/mcwhittemore/ejs/tarball/master"
   },
   "repository": {
     "type": "git",
