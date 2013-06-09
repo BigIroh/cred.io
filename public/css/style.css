@@ -77,3 +77,10 @@ body {
 	font-size: 24px;
 	font-weight: 800;
 }
+
+.spacer {
+	background-image: url('/img/halftone.jpg')
+	background-repeat: repeat;
+	width: 100%
+	height: 10px;
+}
