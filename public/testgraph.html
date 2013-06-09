@@ -7,23 +7,23 @@
       function drawChart() {
         var dataTable = new google.visualization.DataTable();
 	      dataTable.addColumn('date', 'time');
-	      dataTable.addColumn('number', 'views');
+	      dataTable.addColumn('number', 'worth');
 	      dataTable.addRows([
-					[new Date(1370926800000),2768516],
-					[new Date(1369890000000),2484534],
-					[new Date(1368853200000),2110027],
-					[new Date(1367816400000),1834681],
-					[new Date(1366779600000),1368597],
-					[new Date(1365742800000),1048996],
-					[new Date(1364706000000),817452],
-					[new Date(1363669200000),277285],
-					[new Date(1362632400000),3775]
+					[new Date(1370926800000),{v:200, f:"¢200"}],
+					[new Date(1369890000000),{v:97, f:"¢97"}],
+					[new Date(1368853200000),{v:63, f:"¢63"}],
+					[new Date(1367816400000),{v:38, f:"¢38"}],
+					[new Date(1366779600000),{v:20, f:"¢20"}],
+					[new Date(1365742800000),{v:9, f:"¢9"}],
+					[new Date(1364706000000),{v:2, f:"¢2"}],
+					[new Date(1363669200000),{v:1, f:"¢0.09"}],
+					[new Date(1362632400000),{v:0, f:"¢0.00"}]
 	      ]);
 
       	var dataView = new google.visualization.DataView(dataTable);
 
         var options = {
-          title: 'Company Performance'
+          title: 'Video Worth'
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
