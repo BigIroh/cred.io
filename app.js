@@ -16,7 +16,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(obj, done) {
-  database.get(done)
+  database.get(obj, done)
 });
 
 passport.use(new TwitterStrategy({
