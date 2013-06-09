@@ -34,8 +34,8 @@ app.use(express.static(__dirname + '/public'));
 /* ================================================================================== ***/
 
 app.post('/login', passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login'
+  successRedirect: '/',
+  failureRedirect: '/login'
 }));
 
 //routes
