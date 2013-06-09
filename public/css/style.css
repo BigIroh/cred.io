@@ -1,3 +1,7 @@
+body {
+	font-family: "proxima-nova";
+}
+
 .content {
 	margin-top: 50px;
 	overflow: auto;
@@ -10,8 +14,23 @@
 .stats {
 	height: 60px;
 	border: 1px #444 solid;
+	text-align: center;
 }
 
 .stats > div {
 	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.buttonBar {
+	height: 60px;
+	border: 1px #444 solid;
+	text-align: center;
+}
+
+.buttonBar > div {
+	display: inline-block;
+	padding-left: 15px;
+	padding-right: 15px;
 }
