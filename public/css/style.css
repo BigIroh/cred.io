@@ -56,12 +56,24 @@ body {
 
 .down {
 	font-size: 24px;
-	color: #ED135A;
 	font-weight: 800;
+	color: #ED135A;
 }
 
 .down:before {
 	content: ' ';
 	font-family: 'FontAwesome';
 	color: #444444;
+}
+
+.total {
+	font-size: 24px;
+	font-weight: 800;
+	color: #00ADEF;
+}
+
+.share,
+.shares {
+	font-size: 24px;
+	font-weight: 800;
 }
