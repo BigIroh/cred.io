@@ -14,7 +14,7 @@ var db = nano.use('credio', function(err) {
 	}
 })
 
-module.exports.insert = function(options, callback) {
+module.exports.insertMedia = function(options, callback) {
 	var defaults = {
 		type: 'youtube',
 		views: {},
@@ -41,3 +41,29 @@ module.exports.byUrl = function(url, callback) {
 		callback(null, body.rows[0].value);
 	})
 }
+
+module.exports.insertUser = function(user, callback) {
+	user.json = user._json;
+	delete user._json;
+	delete user._raw;
+	db.get(user.json.id_str, function(err, body) {
+		if(!err) {
+			body.json = user.json;
+			user = body;
+		}
+		db.insert(user, user.json.id_str, function(err, body) {
+			if(err) {
+				callback(err);
+				return;
+			}
+			user._id = body.id;
+			user._rev = body.rev;
+			callback(null, user);
+		});
+	})
+}
+
+module.exports.get = function(id, callback) {
+	db.get(id, callback)
+}
+

@@ -1,4 +1,5 @@
-var LocalStrategy = require('passport-local').Strategy;
+var TwitterStrategy = require('passport-twitter').Strategy;
+var database = require('./database');
 var passport = require('passport');
 var express = require('express');
 var socket = require('./socket');
@@ -10,9 +11,18 @@ var app = express();
 /** ================================= SETUP PASSPORT ================================= **/
 /* ================================================================================== ***/
 
-passport.use(new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password'
+passport.serializeUser(function(user, done) {
+ 	done(null, user.json.id_str);
+});
+
+passport.deserializeUser(function(obj, done) {
+ 	database.get(obj, done)
+});
+
+passport.use(new TwitterStrategy({
+	consumerKey: 'y85InTne2xLb17NKOtrdng',
+	consumerSecret: '3b7ZTAh5LtES0Dl2t7XclogOIQGbd5WcRcLbbiy1s',
+	callbackURL: "http://www.cred.io/auth/twitter/callback"
 }, auth));
 
 /*** ================================================================================== */
@@ -33,9 +43,11 @@ app.use(express.static(__dirname + '/public'));
 /** ================================= INIT ENDPOINTS ================================= **/
 /* ================================================================================== ***/
 
-app.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
-  failureRedirect: '/login'
+
+app.get('/auth/twitter', passport.authenticate('twitter'));
+app.get('/auth/twitter/callback', passport.authenticate('twitter', {
+	successRedirect: '/',
+	failureRedirect: '/login'
 }));
 
 //routes
