@@ -1,5 +1,6 @@
 body {
 	font-family: "proxima-nova";
+	color: #444444;
 }
 
 .content {
@@ -40,5 +41,25 @@ body {
 }
 
 .active {
-	color: black;
+	color: #444444;
+}
+
+.button {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.title {
+	font-size: 0.75em;
+	font-weight: bold;
+}
+
+.down {
+	color: #ED135A;
+}
+
+.down:before {
+	content: ' ';
+	font-family: 'FontAwesome';
+	color: #444444;
 }
