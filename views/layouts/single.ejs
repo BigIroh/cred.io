@@ -18,27 +18,37 @@
 			<a class="brand" href="#">
 				<img src="/img/credio_logo.svg" >
 			</a>
-			<ul class="nav pull-right">
-				<li>
-					<div class="notifications barItem">
-						<i class="icon-bolt"></i>
-					</div>
-				</li>
-				<li>
-					<div class="messages barItem">
-						<i class="icon-envelope"></i>
-					</div>
-				</li>
-				<li>
-					<a href="#" class="profile">
-						<img class="userImage" src="<%= user.json.profile_image_url %>" >
-						<div class="notImg">
-							<div class="name"><%= user.json.name %></div>
-							<div class="balance total"><%= user.json.balance %></div>
+			<% if(user.json.profile_image_url) { %>
+				<ul class="nav pull-right">
+					<li>
+						<div class="notifications barItem">
+							<i class="icon-bolt"></i>
 						</div>
-					</a>
-				</li>
-			</ul>
+					</li>
+					<li>
+						<div class="messages barItem">
+							<i class="icon-envelope"></i>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="profile">
+							<img class="userImage" src="<%= user.json.profile_image_url %>" >
+							<div class="notImg">
+								<div class="name"><%= user.json.name %></div>
+								<div class="balance total"><%= user.json.balance %></div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			<% } else { %>
+				<ul class="nav pull-right">
+					<li>
+						<a id="sign" href="/auth/twitter">
+							SIGN IN
+						</a>
+					</li>
+				</ul>
+			<% } %>
 		</div>
 		<div class="content">
 			<%- content %>
