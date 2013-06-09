@@ -12,7 +12,7 @@ var app = express();
 /* ================================================================================== ***/
 
 passport.serializeUser(function(user, done) {
- 	done(null, user._id);
+ 	done(null, user.id_str);
 });
 
 passport.deserializeUser(function(obj, done) {
