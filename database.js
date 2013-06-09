@@ -45,6 +45,11 @@ module.exports.byUrl = function(url, callback) {
 module.exports.insertUser = function(user, callback) {
 	console.log(user);
 	db.insert(user, user.id, function(err, body) {
+		if(err) {
+			console.log(err);
+			callback(err);
+			return;
+		}
 		user._id = body.id;
 		user._rev = body.rev;
 		callback(err, user);
