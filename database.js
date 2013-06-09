@@ -48,7 +48,7 @@ module.exports.insertUser = function(user, callback) {
 	delete user._json;
 	delete user._raw;
 
-	db.insert(user, user.id, function(err, body) {
+	db.insert(user, user.id_str, function(err, body) {
 		if(err) {
 			console.log(err);
 			callback(err);
