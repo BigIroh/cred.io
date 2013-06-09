@@ -1,0 +1,17 @@
+.content {
+	margin-top: 50px;
+	overflow: auto;
+}
+
+.video {
+	width: 100%;
+}
+
+.stats {
+	height: 60px;
+	border: 1px #444 solid;
+}
+
+.stats > div {
+	display: inline-block;
+}
