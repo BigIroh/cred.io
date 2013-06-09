@@ -6,7 +6,8 @@ module.exports = function(app){
       locals: {page_id:"page-home"},
       blocks: {
         content:{
-          filename:"views/home.ejs"
+          filename:"views/home.ejs",
+          locals: {}
         }
       }
     }
