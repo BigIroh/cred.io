@@ -6,7 +6,7 @@ body {
 
 .content {
 	margin-top: 50px;
-	overflow: auto;
+	overflow: hidden;
 }
 
 .video {
