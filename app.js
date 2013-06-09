@@ -1,5 +1,6 @@
 var TwitterStrategy = require('passport-twitter').Strategy;
 var passport = require('passport');
+var database = require('database');
 var express = require('express');
 var socket = require('./socket');
 var auth = require('./auth');
@@ -9,6 +10,14 @@ var app = express();
 /*** ================================================================================== */
 /** ================================= SETUP PASSPORT ================================= **/
 /* ================================================================================== ***/
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(obj, done) {
+  database.get(done)
+});
 
 passport.use(new TwitterStrategy({
 	consumerKey: 'y85InTne2xLb17NKOtrdng',

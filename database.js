@@ -50,3 +50,7 @@ module.exports.insertUser = function(user, callback) {
 	});
 }
 
+module.exports.get = function(id, callback) {
+	db.get(id, callback)
+}
+
