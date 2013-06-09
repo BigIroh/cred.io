@@ -1,4 +1,4 @@
-var nano = require('nano')(process.env.CLOUDANT_URL);
+var nano = require('nano')(process.env.CLOUDANT_URL || "http://127.0.0.1:5984");
 var db = nano.use('credio', function(err) {
 	if(err) {
 		nano.db.create('credio');
