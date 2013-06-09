@@ -1,6 +1,7 @@
 module.exports = function(app){
 
-	app.get("/:contentid", function(req, res){
+	app.get("/:contentid", function(req, res) {
+		req.user.balance = '¢5000';
 		var opt = {
 			locals: {
 				page_id: "page-home",
