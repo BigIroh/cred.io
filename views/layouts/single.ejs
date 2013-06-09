@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Credio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/font-awesome-ie7.min.css" rel="stylesheet" media="screen">
-    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
-    <link href="css/style.css" rel="stylesheet" media="screen">
+	<head>
+		<title>Credio</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/font-awesome-ie7.min.css" rel="stylesheet" media="screen">
+		<link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+		<link href="css/style.css" rel="stylesheet" media="screen">
 
-    <script type="text/javascript">
+		<script type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="navbar navbar-fixed-top">
+			<a class="brand" href="#">
+				<img src="/img/credio_logo.svg" >
+			</a>
+			<ul class="nav pull-right">
+				<li>
+					<div class="notifications">
 
-      //GA CODE
-
-    </script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="masthead">
-        <script> var page_id = "<%- page_id %>"; </script>
-        <ul class="nav nav-pills pull-right">
-          <li id="page-home"><a href="/">Home</a></li>
-        </ul>
-        <h3 class="muted">Credio</h3>
-        <script> document.getElementById(page_id).className = "active"; </script>
-      </div>
-
-      <%- content %>
-      
-      <hr/>
-      <div class="footer">
-        <p>© Credio 2013</p>
-      </div>
-
-  	</div>
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-  </body>
+					</div>
+				</li>
+				<li>
+					<div class="messages">
+						
+					</div>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<img src="<%= user.json.profile_image_url %>" >
+						<div class="name"><%= user.json.name %></div>
+						<div class="balance"><%= user.json.balance %></div>
+					</a>
+					<b class="caret"></b>
+					<ul class="dropdown-menu">
+						<!-- Dropdown here -->
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<%- content %>
+		<div class="footer">
+			<p>© Credio 2013</p>
+		</div>
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+	</body>
 </html>
