@@ -2,7 +2,10 @@ module.exports = function(app){
 
 	app.get("/:contentid", function(req, res){
 		var opt = {
-			locals: {page_id:"page-home"},
+			locals: {
+				page_id: "page-home",
+				user: req.user
+			},
 			blocks: {
 				content:{
 					filename:"views/content.ejs",
