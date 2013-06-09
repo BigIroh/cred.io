@@ -1,5 +1,6 @@
 module.exports = function(app){
 	app.get("/:contentid", function(req, res) {
+		req.user = req.user || {json:{name:"Matt"}}
 		req.user.json.balance = '¢5000';
 		var opt = {
 			locals: {
