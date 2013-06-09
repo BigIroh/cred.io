@@ -46,16 +46,21 @@ module.exports.insertUser = function(user, callback) {
 	user.json = user._json;
 	delete user._json;
 	delete user._raw;
-
-	db.insert(user, user.json.id_str, function(err, body) {
-		if(err) {
-			callback(err);
-			return;
+	db.get(user.json.id_str, function(err, body) {
+		if(!err) {
+			body.json = user.json;
+			user = body;
 		}
-		user._id = body.id;
-		user._rev = body.rev;
-		callback(null, user);
-	});
+		db.insert(user, user.json.id_str, function(err, body) {
+			if(err) {
+				callback(err);
+				return;
+			}
+			user._id = body.id;
+			user._rev = body.rev;
+			callback(null, user);
+		});
+	})
 }
 
 module.exports.get = function(id, callback) {
