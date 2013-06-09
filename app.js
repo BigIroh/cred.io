@@ -46,7 +46,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', passport.authenticate('twitter', {
-	successRedirect: '/',
+	successRedirect: '/jldjkldfgjk',
 	failureRedirect: '/login'
 }));
 

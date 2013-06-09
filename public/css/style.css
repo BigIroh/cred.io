@@ -45,11 +45,6 @@ body {
 	color: #444444;
 }
 
-.button {
-	margin-top: 15px;
-	margin-bottom: 15px;
-}
-
 .title {
 	font-size: 14px;
 	font-weight: bold;
@@ -108,9 +103,18 @@ body {
 	border-left: 1px #777 solid;
 }
 
+.profile {
+	width: 70px;
+}
+
 .navbar .brand {
 	text-align: center;
 	width: 50px;
 	border-right: 1px #777 solid;
 	padding-right: 0;
+}
+
+.navbar {
+	background-color: white;
+	border-bottom: 1px #777 solid;
 }
