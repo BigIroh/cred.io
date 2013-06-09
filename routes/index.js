@@ -1,22 +1,25 @@
 module.exports = function(app){
 
-	app.get("/", function(req, res){
-		
-		var opt = {
+  app.get("/", function(req, res) {
+    req.user = req.user || {json:{name:"Matt"}}
+    req.user.json.balance = '¢5000';
+    var opt = {
       locals: {
-        page_id:"page-home",
-        user: req.user || {json:{profile_image_url:"", balance:"¢5000", name:"Matt"}}
+        page_id: "page-home",
+        user: req.user
       },
       blocks: {
         content:{
-          filename:"views/home.ejs",
-          locals: {}
+          filename:"views/content.ejs",
+          locals: {
+            user: req.user
+          }
         }
       }
     }
 
     res.render('layouts/single', opt);
+  }); 
 
-	});
 
 }
