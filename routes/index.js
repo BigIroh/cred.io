@@ -10,7 +10,7 @@ module.exports = function(app){
       },
       blocks: {
         content:{
-          filename:"views/content.ejs",
+          filename:"views/home.ejs",
           locals: {
             user: req.user
           }
@@ -19,7 +19,5 @@ module.exports = function(app){
     }
 
     res.render('layouts/single', opt);
-  }); 
-
-
+  });
 }
